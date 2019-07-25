@@ -1,0 +1,41 @@
+// PHOTO ANIMATION SETUP
+.composition {
+    position: relative;
+
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        transition: all .2s; // ADD THE TRANSITION TO ALL THE PHOTOS
+        outline-offset: 2rem; //PUT THE OFFSET TRANSPARENT BORDER
+    
+        &--p1 {
+        left: 0;
+        top: -2rem;
+        }
+
+        &--p2 {
+        right: 0;
+        top: 2rem;
+        }
+
+        &--p3 {
+        left: 20%;
+        top: 10rem;
+        }
+
+        &:hover {
+            outline: 1.5rem solid $color-primary; // PUT THE GREEN BORDER AT THE IMAGE
+            transform: scale(1.05) translateY(-.5rem); //DATAIL
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 20;
+        }
+    }
+
+    &:hover &__photo:not(:hover) { //When we hover the select component than select the photo that is nested inside of this, and then delect one that is not hovered.
+        transform: scale(.9); //when we hover the composition than select the composition photo wich is not the hover 
+    }
+}
+

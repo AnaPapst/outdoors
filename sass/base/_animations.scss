@@ -1,0 +1,45 @@
+/* ANIMATION */ 
+
+@keyframes moveInLeft { /* DIREITA PRA ESQUERDA*/
+    0% { /* THE START */ 
+        opacity: 0; /* COMEÇA INVISÍVEL */
+        transform: translateX(-10rem); /* COMEÇA BEM PRO LADO ESQUERDO -*/
+    }
+
+    80% {
+        transform: translateX(1rem); /* PASSA UM POUCO DO ESTADO ORIGINAL E VAI PRA DIREITA 20PX */
+    }
+
+    100% { /* ESTADO FINAL */
+        opacity: 1; /* APARECE TOTALMENTE */ 
+        transform: translate(0); /* ANIMAÇÃO TERMINA NO SEU LOCAL QUE DEVE FICAR 0*/
+    }   
+}
+
+@keyframes moveInRight { /* ESQUERDA PRA DIREITA*/
+    0% { 
+        opacity: 0;
+        transform: translateX(10rem); 
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% { 
+        opacity: 1; 
+        transform: translate(0); 
+    }   
+}
+
+@keyframes moveInBottom { /* BOTAO DE BAIXO PRA CIMA */
+    0% { 
+        opacity: 0;
+        transform: translateY(3rem); 
+    }
+
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }   
+}

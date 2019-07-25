@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* CONVERTER PX TO REM, AGORA 1REM É IGUAL A 10PX DO ROOT FONT SIZE EM VEZ DE 16PX*/
+}
+
+body {
+    box-sizing: border-box;
+}
+
