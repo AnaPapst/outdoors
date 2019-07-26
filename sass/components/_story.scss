@@ -1,0 +1,59 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: $color-white;
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem; 
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%); // Shape Outside makes the text round the image
+        shape-outside: circle(50% at 50% 50%); //exacly the center vertically and horizontally. To use it we need to set as float. 
+        
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg); //Put a margin at the shape, without using margin ou padding, because it's a floated element.
+        position: relative;
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4); //the translateX center the image
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0; //INITIAL STATE OF ANIMATION
+        transition: all .5s;
+        backface-visibility: hidden; //fix the shake glich
+    }
+
+    &:hover &__caption{ //as soon as we hover story we want to change caption
+        opacity: 1;
+        transform: translate(-50%, -50%);; // -50% its the state that we want, we pass 20% above to -50%
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%); //gives the blue and the darkness on the image when we hover it
+    }
+}
