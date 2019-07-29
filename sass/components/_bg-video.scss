@@ -1,0 +1,16 @@
+.bg-video {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1; // Coloca o video atrás de tudo
+    opacity: .15;
+    overflow: hidden;
+
+    &__content {
+        height: 100%; // Put the video on all section
+        width: 100%; // Put the video on all section
+        object-fit: cover; //similar to background size cover (but cover the parent element), clip the rest of the video ou image
+    }
+}
