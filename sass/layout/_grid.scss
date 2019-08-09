@@ -4,6 +4,15 @@
 
     &:not(:last-child) { // select everything except the lastchild, different than using only the lastchild
         margin-bottom: $gutter-vertical; //put a vertical gutter except on the last child
+        
+        @include respond(tab-port) { // RESPONSIVE
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) { // RESPONSIVE
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
@@ -13,6 +22,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) { // RESPONSIVE
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small; // MARGIN BETWEEN GRID
+            }
+        }
+
+        @include respond(tab-port) { // RESPONSIVE
+            width: 100% !important;
         }
     }
 

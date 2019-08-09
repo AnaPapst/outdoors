@@ -3,9 +3,18 @@
     padding: 10rem 0;
     font-size: 1.4rem;
 
+    @include respond(tab-port) { //RESPONSIVE
+        padding: 8rem 0;
+    }
+
     &__logo-box {
         text-align: center; //Center the logo because it is as a inline, so it reads as text
         margin-bottom: 8rem;
+
+        @include respond(tab-port) { //RESPOSNSIVE
+            margin-bottom: 6rem;
+        }  
+        
     }
 
     &__logo {
@@ -17,6 +26,11 @@
         border-top: 1px solid $color-grey-dark;
         padding-top: 2rem;
         display: inline-block; //Não ocupa toda a linha, somente onde precisa, sem isso a linha fica maior.
+        
+        @include respond(tab-port) { //RESPOSNSIVE
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -58,5 +72,8 @@
         width: 80%;
     }
 
-    
+    @include respond(tab-port) { //RESPOSNSIVE
+        width: 100%;
+        float: none;
+    }  
 }
