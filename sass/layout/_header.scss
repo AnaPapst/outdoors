@@ -4,13 +4,29 @@
     background-image: linear-gradient(to right bottom, 
                     rgba($color-primary-light, 0.8), 
                     rgba($color-primary-dark, 0.8)), 
-                url(../img/hero.jpg);
+                url(../img/hero-small.jpg);
                 background-size: cover;
                 background-position: top;
                 position: relative; /*TO CENTER*/
     
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+    //RESPONSIVE IMAGE
+    // The large version of the hero image is shown when the resolution is HIGHER than 192dpi, and at the same time
+    // the width is larger than 600 pixels. Because if its below 600pixel doesn't make sense to display
+    // such high resolution image.
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), //or | 37.5 is equal to 600px  *600/16 = 37.5*
+           (min-width: 125em) { // another condition. Low resolution and 20000 pixel screen *2000/16 = 125em*
+        background-image: linear-gradient(
+            to right bottom,
+                rgba($color-primary-light, 0.8), 
+                rgba($color-primary-dark, 0.8)),
+            url(../img/hero.jpg);
+    }
+
+    //_________________________________
 
     @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
